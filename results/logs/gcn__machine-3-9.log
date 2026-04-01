@@ -1,0 +1,77 @@
+# command: python train_gcn.py --window 10 --stride 1 --val-ratio 0.1 --corr-threshold 0.8 --corr-top-k 6 --hidden-dim 32 --embed-dim 8 --epochs 20 --patience 5 --batch-size 64 --smooth-k 5 --percentiles 99.0,99.5,99.9 --device cpu --machine machine-3-9
+# started_at: 2026-04-01T17:43:18
+# returncode: 0
+# duration_sec: 30.590
+
+Loading SMD data...
+W_train_all: (28704, 10, 38)
+W_test     : (28704, 10, 38)
+y_test     : (28704,), positives=339
+W_train split: (25834, 10, 38), W_val split: (2870, 10, 38)
+A shape: (38, 38), density=0.1053
+Epoch 001/020 | train_loss=0.315991 | val_loss=0.159537
+Epoch 002/020 | train_loss=0.193307 | val_loss=0.130221
+Epoch 003/020 | train_loss=0.168310 | val_loss=0.114636
+Epoch 004/020 | train_loss=0.158367 | val_loss=0.105712
+Epoch 005/020 | train_loss=0.150688 | val_loss=0.101754
+Epoch 006/020 | train_loss=0.145472 | val_loss=0.097864
+Epoch 007/020 | train_loss=0.143626 | val_loss=0.095274
+Epoch 008/020 | train_loss=0.141309 | val_loss=0.093350
+Epoch 009/020 | train_loss=0.140659 | val_loss=0.094622
+Epoch 010/020 | train_loss=0.138220 | val_loss=0.091893
+Epoch 011/020 | train_loss=0.136157 | val_loss=0.094195
+Epoch 012/020 | train_loss=0.134497 | val_loss=0.091231
+Epoch 013/020 | train_loss=0.134783 | val_loss=0.090856
+Epoch 014/020 | train_loss=0.132907 | val_loss=0.090262
+Epoch 015/020 | train_loss=0.132386 | val_loss=0.091016
+Epoch 016/020 | train_loss=0.131665 | val_loss=0.091320
+Epoch 017/020 | train_loss=0.129680 | val_loss=0.090236
+Epoch 018/020 | train_loss=0.129464 | val_loss=0.088695
+Epoch 019/020 | train_loss=0.130643 | val_loss=0.089040
+Epoch 020/020 | train_loss=0.129471 | val_loss=0.088577
+Applied moving average smoothing: k=5
+
+Score stats
+Train mean=0.088298 max=2.099519
+Test  mean=49.062360 max=54332.702734
+
+Evaluation with thresholds
+----------------------------------------
+Percentile: 99.0
+Threshold : 0.265823
+Pred count: 11735
+True count: 339
+Precision : 0.024712
+Recall    : 0.855457
+F1        : 0.048037
+----------------------------------------
+Percentile: 99.5
+Threshold : 0.284097
+Pred count: 10647
+True count: 339
+Precision : 0.027144
+Recall    : 0.852507
+F1        : 0.052612
+----------------------------------------
+Percentile: 99.9
+Threshold : 0.633466
+Pred count: 1522
+True count: 339
+Precision : 0.187254
+Recall    : 0.840708
+F1        : 0.306287
+
+Best threshold setting
+----------------------------------------
+Best percentile: 99.9
+Best threshold : 0.633466
+Best precision : 0.187254
+Best recall    : 0.840708
+Best F1        : 0.306287
+Pred anomalies : 1522
+True anomalies : 339
+
+/opt/homebrew/anaconda3/envs/hgad/lib/python3.10/site-packages/numpy/lib/_function_base_impl.py:3045: RuntimeWarning: invalid value encountered in divide
+  c /= stddev[:, None]
+/opt/homebrew/anaconda3/envs/hgad/lib/python3.10/site-packages/numpy/lib/_function_base_impl.py:3046: RuntimeWarning: invalid value encountered in divide
+  c /= stddev[None, :]

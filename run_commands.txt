@@ -1,0 +1,81 @@
+global only
+python train_hier_hgnn.py \
+  --machine machine-1-1 \
+  --graph-mode global \
+  --hidden-dim 32 --embed-dim 8 \
+  --epochs 16 --patience 3 \
+  --dropout 0.25 --weight-decay 5e-4 \
+  --latent-noise-std 0.05 --latent-reg-weight 1e-3 --denoise-std 0.03 \
+  --score-weights 0.75,0.2,0.05 \
+  --percentiles 99.0,99.5,99.9
+
+global + local
+python train_hier_hgnn.py \
+  --machine machine-1-1 \
+  --graph-mode global_local \
+  --local-top-k 3 \
+  --hidden-dim 32 --embed-dim 8 \
+  --epochs 16 --patience 3 \
+  --dropout 0.25 --weight-decay 5e-4 \
+  --latent-noise-std 0.05 --latent-reg-weight 1e-3 --denoise-std 0.03
+
+
+
+python train_lstm.py \
+  --machine machine-1-1 \
+  --window 10 \
+  --stride 1 \
+  --val-ratio 0.1 \
+  --hidden-size 64 \
+  --num-layers 1 \
+  --epochs 20 \
+  --patience 5 \
+  --batch-size 64 \
+  --eval-batch-size 256 \
+  --lr 1e-3 \
+  --weight-decay 1e-5 \
+  --smooth-k 5 \
+  --percentiles 99.0,99.5,99.9 \
+  --device cpu
+
+
+python train_iforest.py \
+  --machine machine-1-1 \
+  --window 10 \
+  --stride 1 \
+  --n-estimators 200 \
+  --max-samples auto \
+  --contamination auto \
+  --smooth-k 5 \
+  --percentiles 99.0,99.5,99.9
+
+
+python train_gcn.py \
+  --machine machine-1-1 \
+  --window 10 \
+  --stride 1 \
+  --corr-threshold 0.8 \
+  --corr-top-k 6 \
+  --hidden-dim 32 \
+  --embed-dim 8 \
+  --epochs 20 \
+  --patience 5 \
+  --batch-size 64 \
+  --smooth-k 5 \
+  --percentiles 99.0,99.5,99.9 \
+  --device cpu
+
+如何运行
+跑指定机器列表（你给的第一版场景）：
+python scripts/run_batch_experiments.py \
+  --models iforest,lstm,gcn,hier_hgnn \
+  --machines machine-1-1,machine-2-1,machine-3-1
+自动扫描全部 SMD machine：
+python scripts/run_batch_experiments.py \
+  --models iforest,lstm,gcn,hier_hgnn \
+  --all-machines
+生成汇总和图表：
+python scripts/plot_results.py \
+  --results-csv results/results.csv \
+  --summary-csv results/summary.csv \
+  --fig-dir results/figures

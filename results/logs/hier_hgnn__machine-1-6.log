@@ -1,0 +1,61 @@
+# command: python train_hier_hgnn.py --window 10 --stride 1 --graph-mode global --hidden-dim 32 --embed-dim 8 --epochs 16 --patience 3 --dropout 0.25 --weight-decay 5e-4 --latent-noise-std 0.05 --latent-reg-weight 1e-3 --denoise-std 0.03 --score-weights 0.75,0.2,0.05 --smooth-k 5 --percentiles 99.0,99.5,99.9 --device cpu --machine machine-1-6
+# started_at: 2026-04-01T17:52:04
+# returncode: 0
+# duration_sec: 96.314
+
+Loading SMD data...
+W_train_all: (23679, 10, 38)
+W_test     : (23680, 10, 38)
+y_test     : (23680,), positives=3978
+W_train split: (21312, 10, 38), W_val split: (2367, 10, 38)
+Global H shape: (38, 19)
+Epoch 001/016 | train_loss=1.351777 (recon=1.234725, temp=0.580581, latent=0.935508) | val_loss=0.849847 (recon=0.784600, temp=0.322101, latent=0.827268)
+Epoch 002/016 | train_loss=0.834947 (recon=0.770130, temp=0.320484, latent=0.720346) | val_loss=0.653094 (recon=0.588323, temp=0.320786, latent=0.613535)
+Epoch 003/016 | train_loss=0.678199 (recon=0.610590, temp=0.335350, latent=0.538760) | val_loss=0.517059 (recon=0.452560, temp=0.320124, latent=0.474748)
+Epoch 004/016 | train_loss=0.550126 (recon=0.487498, temp=0.311023, latent=0.423415) | val_loss=0.417608 (recon=0.360402, temp=0.284160, latent=0.374705)
+Epoch 005/016 | train_loss=0.471987 (recon=0.414426, temp=0.286180, latent=0.325300) | val_loss=0.360475 (recon=0.308285, temp=0.259552, latent=0.280116)
+Epoch 006/016 | train_loss=0.426898 (recon=0.372096, temp=0.272755, latent=0.251585) | val_loss=0.325174 (recon=0.276462, temp=0.242426, latent=0.226338)
+Epoch 007/016 | train_loss=0.395581 (recon=0.342407, temp=0.264808, latent=0.212110) | val_loss=0.298180 (recon=0.251531, temp=0.232260, latent=0.197570)
+Epoch 008/016 | train_loss=0.370663 (recon=0.318665, temp=0.259054, latent=0.187559) | val_loss=0.276397 (recon=0.231614, temp=0.223041, latent=0.174954)
+Epoch 009/016 | train_loss=0.349936 (recon=0.298894, temp=0.254370, latent=0.168453) | val_loss=0.257979 (recon=0.214830, temp=0.214964, latent=0.156072)
+Epoch 010/016 | train_loss=0.332125 (recon=0.281968, temp=0.250018, latent=0.154275) | val_loss=0.242367 (recon=0.200244, temp=0.209903, latent=0.142241)
+Epoch 011/016 | train_loss=0.316807 (recon=0.267379, temp=0.246444, latent=0.139497) | val_loss=0.228753 (recon=0.188241, temp=0.201916, latent=0.128808)
+Epoch 012/016 | train_loss=0.303342 (recon=0.254690, temp=0.242616, latent=0.128825) | val_loss=0.216742 (recon=0.177245, temp=0.196893, latent=0.118313)
+Epoch 013/016 | train_loss=0.291732 (recon=0.243705, temp=0.239552, latent=0.117522) | val_loss=0.206719 (recon=0.167985, temp=0.193128, latent=0.108114)
+Epoch 014/016 | train_loss=0.281555 (recon=0.234189, temp=0.236275, latent=0.110099) | val_loss=0.197246 (recon=0.159575, temp=0.187841, latent=0.103352)
+Epoch 015/016 | train_loss=0.272379 (recon=0.225641, temp=0.233172, latent=0.103653) | val_loss=0.189479 (recon=0.152947, temp=0.182177, latent=0.097276)
+Epoch 016/016 | train_loss=0.264351 (recon=0.218202, temp=0.230254, latent=0.098094) | val_loss=0.182127 (recon=0.146240, temp=0.178972, latent=0.091981)
+
+Best threshold setting
+----------------------------------------
+Percentile : 99.9
+Threshold  : 15.211850
+Precision  : 0.721820
+Recall     : 0.777526
+F1-score   : 0.748639
+Pred count : 4285
+True count : 3978
+
+Root Cause Detection
+----------------------------------------
+Single-window top-3 root causes (window idx=4637)
+metric_13    score=4.266747
+metric_15    score=1.520765
+metric_8     score=0.584185
+
+Global root cause ranking (top 10)
+metric_15    count=4050
+metric_3     count=2754
+metric_13    count=2570
+metric_2     count=1621
+metric_22    count=778
+metric_8     count=732
+metric_12    count=119
+metric_0     count=82
+metric_32    count=42
+metric_10    count=38
+
+/opt/homebrew/anaconda3/envs/hgad/lib/python3.10/site-packages/numpy/lib/_function_base_impl.py:3045: RuntimeWarning: invalid value encountered in divide
+  c /= stddev[:, None]
+/opt/homebrew/anaconda3/envs/hgad/lib/python3.10/site-packages/numpy/lib/_function_base_impl.py:3046: RuntimeWarning: invalid value encountered in divide
+  c /= stddev[None, :]

@@ -1,0 +1,59 @@
+# command: python train_iforest.py --window 10 --stride 1 --smooth-k 5 --percentiles 99.0,99.5,99.9 --machine machine-2-8
+# started_at: 2026-04-01T17:13:59
+# returncode: 0
+# duration_sec: 2.315
+
+Loading data...
+Normalizing...
+Building sliding windows...
+W_train shape: (23693, 10, 38)
+W_test shape : (23694, 10, 38)
+y_test shape : (23694,), positives=170
+X_train_flat : (23693, 380)
+X_test_flat  : (23694, 380)
+
+Training Isolation Forest...
+
+Computing anomaly scores...
+Applied moving average smoothing: k=5
+
+Score stats
+Train mean=0.432291 max=0.728403
+Test  mean=0.504593 max=0.795009
+
+Evaluation with thresholds
+----------------------------------------
+Percentile: 99.0
+Threshold : 0.635330
+Pred count: 2274
+True count: 170
+Precision : 0.069921
+Recall    : 0.935294
+F1        : 0.130115
+----------------------------------------
+Percentile: 99.5
+Threshold : 0.689658
+Pred count: 778
+True count: 170
+Precision : 0.192802
+Recall    : 0.882353
+F1        : 0.316456
+----------------------------------------
+Percentile: 99.9
+Threshold : 0.716132
+Pred count: 290
+True count: 170
+Precision : 0.455172
+Recall    : 0.776471
+F1        : 0.573913
+
+Best threshold setting
+----------------------------------------
+Best percentile: 99.9
+Best threshold : 0.716132
+Best precision : 0.455172
+Best recall    : 0.776471
+Best F1        : 0.573913
+Pred anomalies : 290
+True anomalies : 170
+

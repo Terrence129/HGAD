@@ -4,7 +4,7 @@ from torch.utils.data import Dataset, DataLoader
 import torch.nn.functional as F
 
 from hypergraph.build_hypergraph import build_incidence_from_window
-from model.hgnn_model import HGADDetector
+from model.hgnn import HGADDetector
 
 class WindowDataset(Dataset):
     def __init__(self, W: np.ndarray):
