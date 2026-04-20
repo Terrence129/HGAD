@@ -1,7 +1,7 @@
 # command: python train_iforest.py --window 10 --stride 1 --smooth-k 5 --percentiles 99.0,99.5,99.9 --machine machine-3-6
-# started_at: 2026-04-01T17:14:20
+# started_at: 2026-04-20T16:58:50
 # returncode: 0
-# duration_sec: 2.238
+# duration_sec: 2.102
 
 Loading data...
 Normalizing...

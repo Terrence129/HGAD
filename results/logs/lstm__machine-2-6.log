@@ -1,7 +1,7 @@
 # command: python train_lstm.py --window 10 --stride 1 --val-ratio 0.1 --hidden-size 64 --epochs 20 --patience 5 --batch-size 64 --smooth-k 5 --percentiles 99.0,99.5,99.9 --device cpu --machine machine-2-6
-# started_at: 2026-04-01T17:23:00
+# started_at: 2026-04-20T17:05:35
 # returncode: 0
-# duration_sec: 38.340
+# duration_sec: 33.725
 
 Loading data...
 Normalizing...
@@ -12,67 +12,67 @@ y_test shape : (28734,), positives=491
 W_train split: (25861, 10, 38), W_val split: (2873, 10, 38)
 
 Training LSTM Autoencoder...
-Epoch 001/020 | train_loss=0.307058 | val_loss=0.284145
-Epoch 002/020 | train_loss=0.210847 | val_loss=0.232119
-Epoch 003/020 | train_loss=0.158125 | val_loss=0.200883
-Epoch 004/020 | train_loss=0.143563 | val_loss=0.185232
-Epoch 005/020 | train_loss=0.135559 | val_loss=0.176208
-Epoch 006/020 | train_loss=0.128930 | val_loss=0.169393
-Epoch 007/020 | train_loss=0.123237 | val_loss=0.160734
-Epoch 008/020 | train_loss=0.116130 | val_loss=0.155500
-Epoch 009/020 | train_loss=0.112785 | val_loss=0.158273
-Epoch 010/020 | train_loss=0.107599 | val_loss=0.135146
-Epoch 011/020 | train_loss=0.103975 | val_loss=0.131230
-Epoch 012/020 | train_loss=0.101355 | val_loss=0.125916
-Epoch 013/020 | train_loss=0.099005 | val_loss=0.132364
-Epoch 014/020 | train_loss=0.094497 | val_loss=0.123859
-Epoch 015/020 | train_loss=0.091963 | val_loss=0.114380
-Epoch 016/020 | train_loss=0.089574 | val_loss=0.141562
-Epoch 017/020 | train_loss=0.088380 | val_loss=0.100630
-Epoch 018/020 | train_loss=0.086757 | val_loss=0.114510
-Epoch 019/020 | train_loss=0.088738 | val_loss=0.098981
-Epoch 020/020 | train_loss=0.083456 | val_loss=0.095105
+Epoch 001/020 | train_loss=0.304027 | val_loss=0.271089
+Epoch 002/020 | train_loss=0.194735 | val_loss=0.221414
+Epoch 003/020 | train_loss=0.159470 | val_loss=0.208823
+Epoch 004/020 | train_loss=0.148882 | val_loss=0.194992
+Epoch 005/020 | train_loss=0.140175 | val_loss=0.187088
+Epoch 006/020 | train_loss=0.132198 | val_loss=0.174223
+Epoch 007/020 | train_loss=0.124908 | val_loss=0.163248
+Epoch 008/020 | train_loss=0.118658 | val_loss=0.160481
+Epoch 009/020 | train_loss=0.113891 | val_loss=0.155411
+Epoch 010/020 | train_loss=0.108976 | val_loss=0.151771
+Epoch 011/020 | train_loss=0.104378 | val_loss=0.138781
+Epoch 012/020 | train_loss=0.103100 | val_loss=0.129933
+Epoch 013/020 | train_loss=0.097612 | val_loss=0.142871
+Epoch 014/020 | train_loss=0.095657 | val_loss=0.120573
+Epoch 015/020 | train_loss=0.091190 | val_loss=0.116719
+Epoch 016/020 | train_loss=0.092318 | val_loss=0.110260
+Epoch 017/020 | train_loss=0.089926 | val_loss=0.115698
+Epoch 018/020 | train_loss=0.085725 | val_loss=0.102657
+Epoch 019/020 | train_loss=0.085159 | val_loss=0.112273
+Epoch 020/020 | train_loss=0.083823 | val_loss=0.092293
 
 Computing reconstruction scores...
 Applied moving average smoothing: k=5
 
 Score stats
-Train mean=0.078418 max=59.333057
-Test  mean=6.464212 max=7134.623535
+Train mean=0.077453 max=59.030285
+Test  mean=6.356325 max=7046.878711
 
 Evaluation with thresholds
 ----------------------------------------
 Percentile: 99.0
-Threshold : 0.285695
-Pred count: 5097
+Threshold : 0.259128
+Pred count: 5350
 True count: 491
-Precision : 0.080439
-Recall    : 0.835031
-F1        : 0.146743
+Precision : 0.082804
+Recall    : 0.902240
+F1        : 0.151686
 ----------------------------------------
 Percentile: 99.5
-Threshold : 0.441032
-Pred count: 3869
+Threshold : 0.397773
+Pred count: 4187
 True count: 491
-Precision : 0.094081
-Recall    : 0.741344
-F1        : 0.166972
+Precision : 0.092668
+Recall    : 0.790224
+F1        : 0.165883
 ----------------------------------------
 Percentile: 99.9
-Threshold : 4.048777
-Pred count: 1780
+Threshold : 4.713796
+Pred count: 1758
 True count: 491
-Precision : 0.121910
-Recall    : 0.441955
-F1        : 0.191105
+Precision : 0.120592
+Recall    : 0.431772
+F1        : 0.188528
 
 Best threshold setting
 ----------------------------------------
 Best percentile: 99.9
-Best threshold : 4.048777
-Best precision : 0.121910
-Best recall    : 0.441955
-Best F1        : 0.191105
-Pred anomalies : 1780
+Best threshold : 4.713796
+Best precision : 0.120592
+Best recall    : 0.431772
+Best F1        : 0.188528
+Pred anomalies : 1758
 True anomalies : 491
 

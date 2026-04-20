@@ -1,7 +1,7 @@
 # command: python train_gcn.py --window 10 --stride 1 --val-ratio 0.1 --corr-threshold 0.8 --corr-top-k 6 --hidden-dim 32 --embed-dim 8 --epochs 20 --patience 5 --batch-size 64 --smooth-k 5 --percentiles 99.0,99.5,99.9 --device cpu --machine machine-3-1
-# started_at: 2026-04-01T17:39:10
+# started_at: 2026-04-20T17:18:46
 # returncode: 0
-# duration_sec: 21.865
+# duration_sec: 23.124
 
 Loading SMD data...
 W_train_all: (28691, 10, 38)
@@ -9,66 +9,66 @@ W_test     : (28691, 10, 38)
 y_test     : (28691,), positives=344
 W_train split: (25822, 10, 38), W_val split: (2869, 10, 38)
 A shape: (38, 38), density=0.0942
-Epoch 001/020 | train_loss=0.355720 | val_loss=0.180391
-Epoch 002/020 | train_loss=0.215851 | val_loss=0.138273
-Epoch 003/020 | train_loss=0.185153 | val_loss=0.118680
-Epoch 004/020 | train_loss=0.169151 | val_loss=0.110602
-Epoch 005/020 | train_loss=0.163069 | val_loss=0.106221
-Epoch 006/020 | train_loss=0.156739 | val_loss=0.103535
-Epoch 007/020 | train_loss=0.154870 | val_loss=0.103353
-Epoch 008/020 | train_loss=0.152851 | val_loss=0.100220
-Epoch 009/020 | train_loss=0.150681 | val_loss=0.100445
-Epoch 010/020 | train_loss=0.149238 | val_loss=0.098932
-Epoch 011/020 | train_loss=0.148112 | val_loss=0.098107
-Epoch 012/020 | train_loss=0.147756 | val_loss=0.097991
-Epoch 013/020 | train_loss=0.145645 | val_loss=0.099008
-Epoch 014/020 | train_loss=0.145517 | val_loss=0.096154
-Epoch 015/020 | train_loss=0.143601 | val_loss=0.096133
-Epoch 016/020 | train_loss=0.143704 | val_loss=0.095837
-Epoch 017/020 | train_loss=0.139618 | val_loss=0.096048
-Epoch 018/020 | train_loss=0.140935 | val_loss=0.096174
-Epoch 019/020 | train_loss=0.140314 | val_loss=0.094074
-Epoch 020/020 | train_loss=0.141716 | val_loss=0.094828
+Epoch 001/020 | train_loss=0.357715 | val_loss=0.192265
+Epoch 002/020 | train_loss=0.214317 | val_loss=0.137220
+Epoch 003/020 | train_loss=0.183521 | val_loss=0.121416
+Epoch 004/020 | train_loss=0.171066 | val_loss=0.115358
+Epoch 005/020 | train_loss=0.164239 | val_loss=0.110126
+Epoch 006/020 | train_loss=0.158772 | val_loss=0.106887
+Epoch 007/020 | train_loss=0.156222 | val_loss=0.104352
+Epoch 008/020 | train_loss=0.152819 | val_loss=0.101004
+Epoch 009/020 | train_loss=0.151326 | val_loss=0.099021
+Epoch 010/020 | train_loss=0.149726 | val_loss=0.098588
+Epoch 011/020 | train_loss=0.149846 | val_loss=0.098275
+Epoch 012/020 | train_loss=0.147599 | val_loss=0.098168
+Epoch 013/020 | train_loss=0.147412 | val_loss=0.095999
+Epoch 014/020 | train_loss=0.145353 | val_loss=0.095165
+Epoch 015/020 | train_loss=0.143750 | val_loss=0.095693
+Epoch 016/020 | train_loss=0.142614 | val_loss=0.094685
+Epoch 017/020 | train_loss=0.143348 | val_loss=0.093838
+Epoch 018/020 | train_loss=0.141204 | val_loss=0.094397
+Epoch 019/020 | train_loss=0.142126 | val_loss=0.094625
+Epoch 020/020 | train_loss=0.140049 | val_loss=0.092992
 Applied moving average smoothing: k=5
 
 Score stats
-Train mean=0.092335 max=1.831850
-Test  mean=54.494586 max=66583.394531
+Train mean=0.091991 max=1.808945
+Test  mean=43.541975 max=50240.836328
 
 Evaluation with thresholds
 ----------------------------------------
 Percentile: 99.0
-Threshold : 0.268078
-Pred count: 12126
+Threshold : 0.274434
+Pred count: 11898
 True count: 344
-Precision : 0.025317
-Recall    : 0.892442
-F1        : 0.049238
+Precision : 0.025719
+Recall    : 0.889535
+F1        : 0.049992
 ----------------------------------------
 Percentile: 99.5
-Threshold : 0.286223
-Pred count: 10906
+Threshold : 0.294229
+Pred count: 10698
 True count: 344
-Precision : 0.028150
-Recall    : 0.892442
-F1        : 0.054578
+Precision : 0.028510
+Recall    : 0.886628
+F1        : 0.055244
 ----------------------------------------
 Percentile: 99.9
-Threshold : 1.001032
-Pred count: 675
+Threshold : 1.033035
+Pred count: 633
 True count: 344
-Precision : 0.392593
-Recall    : 0.770349
-F1        : 0.520118
+Precision : 0.420221
+Recall    : 0.773256
+F1        : 0.544524
 
 Best threshold setting
 ----------------------------------------
 Best percentile: 99.9
-Best threshold : 1.001032
-Best precision : 0.392593
-Best recall    : 0.770349
-Best F1        : 0.520118
-Pred anomalies : 675
+Best threshold : 1.033035
+Best precision : 0.420221
+Best recall    : 0.773256
+Best F1        : 0.544524
+Pred anomalies : 633
 True anomalies : 344
 
 /opt/homebrew/anaconda3/envs/hgad/lib/python3.10/site-packages/numpy/lib/_function_base_impl.py:3045: RuntimeWarning: invalid value encountered in divide

@@ -1,7 +1,7 @@
-# command: python train_hier_hgnn.py --window 10 --stride 1 --graph-mode global --hidden-dim 32 --embed-dim 8 --epochs 16 --patience 3 --dropout 0.25 --weight-decay 5e-4 --latent-noise-std 0.05 --latent-reg-weight 1e-3 --denoise-std 0.03 --score-weights 0.75,0.2,0.05 --smooth-k 5 --percentiles 99.0,99.5,99.9 --device cpu --machine machine-1-3
-# started_at: 2026-04-01T17:47:19
+# command: python train_hier_hgnn.py --window 10 --stride 1 --graph-mode global --hidden-dim 24 --embed-dim 6 --epochs 24 --patience 4 --lr 7e-4 --dropout 0.30 --weight-decay 1e-3 --latent-noise-std 0.08 --latent-reg-weight 2e-3 --denoise-std 0.05 --global-threshold 0.75 --global-top-k 8 --temporal-loss-weight 0.1 --score-weights 0.85,0.1,0.05 --smooth-k 3 --percentiles 96.0,97.0,98.0,99.0,99.5 --device cpu --machine machine-1-3
+# started_at: 2026-04-20T17:25:49
 # returncode: 0
-# duration_sec: 95.402
+# duration_sec: 99.856
 
 Loading SMD data...
 W_train_all: (23693, 10, 38)
@@ -9,51 +9,59 @@ W_test     : (23694, 10, 38)
 y_test     : (23694,), positives=925
 W_train split: (21324, 10, 38), W_val split: (2369, 10, 38)
 Global H shape: (38, 25)
-Epoch 001/016 | train_loss=1.393850 (recon=1.280000, temp=0.564484, latent=0.953145) | val_loss=1.550790 (recon=1.463414, temp=0.432619, latent=0.852645)
-Epoch 002/016 | train_loss=0.834439 (recon=0.772546, temp=0.305762, latent=0.740621) | val_loss=1.298453 (recon=1.208660, temp=0.445677, latent=0.657567)
-Epoch 003/016 | train_loss=0.724161 (recon=0.665799, temp=0.289082, latent=0.544767) | val_loss=1.147197 (recon=1.070487, temp=0.381003, latent=0.509128)
-Epoch 004/016 | train_loss=0.652534 (recon=0.598558, temp=0.267799, latent=0.416864) | val_loss=1.056661 (recon=0.987438, temp=0.344160, latent=0.391972)
-Epoch 005/016 | train_loss=0.597495 (recon=0.545720, temp=0.257315, latent=0.311985) | val_loss=0.990490 (recon=0.923983, temp=0.331019, latent=0.303097)
-Epoch 006/016 | train_loss=0.551857 (recon=0.501387, temp=0.251157, latent=0.238854) | val_loss=0.935720 (recon=0.870195, temp=0.326406, latent=0.243769)
-Epoch 007/016 | train_loss=0.517389 (recon=0.468277, temp=0.244582, latent=0.195587) | val_loss=0.889933 (recon=0.825738, temp=0.319998, latent=0.195096)
-Epoch 008/016 | train_loss=0.492247 (recon=0.444265, temp=0.239086, latent=0.165268) | val_loss=0.844308 (recon=0.781832, temp=0.311550, latent=0.166272)
-Epoch 009/016 | train_loss=0.472236 (recon=0.425146, temp=0.234740, latent=0.141252) | val_loss=0.801719 (recon=0.740982, temp=0.303001, latent=0.136640)
-Epoch 010/016 | train_loss=0.455370 (recon=0.409152, temp=0.230464, latent=0.124879) | val_loss=0.763045 (recon=0.702826, temp=0.300474, latent=0.124581)
-Epoch 011/016 | train_loss=0.441706 (recon=0.396102, temp=0.227445, latent=0.115027) | val_loss=0.729889 (recon=0.670948, temp=0.294137, latent=0.113129)
-Epoch 012/016 | train_loss=0.430350 (recon=0.385278, temp=0.224815, latent=0.109361) | val_loss=0.700756 (recon=0.642399, temp=0.291243, latent=0.108518)
-Epoch 013/016 | train_loss=0.420663 (recon=0.375992, temp=0.222832, latent=0.105100) | val_loss=0.677350 (recon=0.618896, temp=0.291755, latent=0.103069)
-Epoch 014/016 | train_loss=0.411542 (recon=0.367479, temp=0.219816, latent=0.099491) | val_loss=0.655129 (recon=0.597994, temp=0.285182, latent=0.098653)
-Epoch 015/016 | train_loss=0.404111 (recon=0.360525, temp=0.217432, latent=0.099240) | val_loss=0.634398 (recon=0.578435, temp=0.279299, latent=0.102469)
-Epoch 016/016 | train_loss=0.397364 (recon=0.354248, temp=0.215072, latent=0.102171) | val_loss=0.614403 (recon=0.558529, temp=0.278865, latent=0.100735)
+Epoch 001/024 | train_loss=1.473233 (recon=1.412786, temp=0.586653, latent=0.890537) | val_loss=1.716845 (recon=1.663381, temp=0.519918, latent=0.735897)
+Epoch 002/024 | train_loss=0.937371 (recon=0.897756, temp=0.384474, latent=0.584069) | val_loss=1.340771 (recon=1.293024, temp=0.467903, latent=0.478123)
+Epoch 003/024 | train_loss=0.749124 (recon=0.714766, temp=0.335928, latent=0.382585) | val_loss=1.222685 (recon=1.178053, temp=0.439709, latent=0.330571)
+Epoch 004/024 | train_loss=0.679182 (recon=0.645491, temp=0.331473, latent=0.271652) | val_loss=1.138083 (recon=1.094710, temp=0.428795, latent=0.246372)
+Epoch 005/024 | train_loss=0.622574 (recon=0.590640, temp=0.315114, latent=0.211576) | val_loss=1.051818 (recon=1.011252, temp=0.401680, latent=0.198999)
+Epoch 006/024 | train_loss=0.573958 (recon=0.544190, temp=0.294137, latent=0.176998) | val_loss=0.975550 (recon=0.937634, temp=0.375868, latent=0.164267)
+Epoch 007/024 | train_loss=0.536270 (recon=0.508118, temp=0.278515, latent=0.150220) | val_loss=0.920339 (recon=0.883975, temp=0.360702, latent=0.146790)
+Epoch 008/024 | train_loss=0.508279 (recon=0.481178, temp=0.268308, latent=0.134899) | val_loss=0.879980 (recon=0.844514, temp=0.351780, latent=0.143779)
+Epoch 009/024 | train_loss=0.487492 (recon=0.461005, temp=0.262275, latent=0.129877) | val_loss=0.847061 (recon=0.811973, temp=0.347948, latent=0.146423)
+Epoch 010/024 | train_loss=0.470998 (recon=0.444922, temp=0.258164, latent=0.129601) | val_loss=0.817583 (recon=0.782354, temp=0.349477, latent=0.140773)
+Epoch 011/024 | train_loss=0.456875 (recon=0.431122, temp=0.254897, latent=0.132022) | val_loss=0.788602 (recon=0.753376, temp=0.349333, latent=0.146172)
+Epoch 012/024 | train_loss=0.444589 (recon=0.419124, temp=0.252050, latent=0.130048) | val_loss=0.760395 (recon=0.726362, temp=0.337601, latent=0.136449)
+Epoch 013/024 | train_loss=0.433993 (recon=0.408723, temp=0.250198, latent=0.125527) | val_loss=0.734654 (recon=0.700694, temp=0.336786, latent=0.140869)
+Epoch 014/024 | train_loss=0.423619 (recon=0.398622, temp=0.247497, latent=0.123420) | val_loss=0.711344 (recon=0.677415, temp=0.336733, latent=0.128095)
+Epoch 015/024 | train_loss=0.415241 (recon=0.390410, temp=0.245892, latent=0.120970) | val_loss=0.689195 (recon=0.655589, temp=0.333551, latent=0.125422)
+Epoch 016/024 | train_loss=0.406959 (recon=0.382339, temp=0.243768, latent=0.121391) | val_loss=0.669394 (recon=0.636008, temp=0.331400, latent=0.123199)
+Epoch 017/024 | train_loss=0.400536 (recon=0.376064, temp=0.242349, latent=0.118802) | val_loss=0.652215 (recon=0.619847, temp=0.321195, latent=0.124241)
+Epoch 018/024 | train_loss=0.394342 (recon=0.370011, temp=0.240891, latent=0.120946) | val_loss=0.637453 (recon=0.605192, temp=0.320213, latent=0.119532)
+Epoch 019/024 | train_loss=0.389303 (recon=0.365037, temp=0.240205, latent=0.122972) | val_loss=0.622165 (recon=0.589588, temp=0.323265, latent=0.125341)
+Epoch 020/024 | train_loss=0.384432 (recon=0.360346, temp=0.238482, latent=0.118667) | val_loss=0.607714 (recon=0.575808, temp=0.316708, latent=0.117918)
+Epoch 021/024 | train_loss=0.380652 (recon=0.356630, temp=0.237802, latent=0.120745) | val_loss=0.599505 (recon=0.567660, temp=0.316042, latent=0.120065)
+Epoch 022/024 | train_loss=0.376467 (recon=0.352592, temp=0.236318, latent=0.121633) | val_loss=0.587073 (recon=0.555121, temp=0.317053, latent=0.123294)
+Epoch 023/024 | train_loss=0.373312 (recon=0.349498, temp=0.235640, latent=0.125229) | val_loss=0.576635 (recon=0.544961, temp=0.314258, latent=0.124385)
+Epoch 024/024 | train_loss=0.369679 (recon=0.346061, temp=0.233675, latent=0.125606) | val_loss=0.568734 (recon=0.537165, temp=0.313217, latent=0.123602)
 
 Best threshold setting
 ----------------------------------------
-Percentile : 99.0
-Threshold  : 0.584296
-Precision  : 0.275194
-Recall     : 0.383784
-F1-score   : 0.320542
-Pred count : 1290
+Percentile : 98.0
+Threshold  : 0.404047
+Precision  : 0.262821
+Recall     : 0.531892
+F1-score   : 0.351806
+Pred count : 1872
 True count : 925
 
 Root Cause Detection
 ----------------------------------------
-Single-window top-3 root causes (window idx=372)
-metric_4     score=3.444846
-metric_5     score=1.799754
-metric_33    score=1.350988
+Single-window top-3 root causes (window idx=265)
+metric_4     score=3.904200
+metric_5     score=2.409240
+metric_19    score=0.593668
 
 Global root cause ranking (top 10)
-metric_4     count=821
-metric_5     count=790
-metric_6     count=571
-metric_11    count=277
-metric_14    count=267
-metric_19    count=202
-metric_0     count=176
-metric_33    count=176
-metric_15    count=123
-metric_3     count=88
+metric_4     count=1162
+metric_5     count=1128
+metric_6     count=721
+metric_19    count=399
+metric_11    count=371
+metric_14    count=340
+metric_0     count=329
+metric_29    count=203
+metric_33    count=190
+metric_15    count=169
 
 /opt/homebrew/anaconda3/envs/hgad/lib/python3.10/site-packages/numpy/lib/_function_base_impl.py:3045: RuntimeWarning: invalid value encountered in divide
   c /= stddev[:, None]

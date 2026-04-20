@@ -1,7 +1,7 @@
 # command: python train_gcn.py --window 10 --stride 1 --val-ratio 0.1 --corr-threshold 0.8 --corr-top-k 6 --hidden-dim 32 --embed-dim 8 --epochs 20 --patience 5 --batch-size 64 --smooth-k 5 --percentiles 99.0,99.5,99.9 --device cpu --machine machine-3-4
-# started_at: 2026-04-01T17:40:48
+# started_at: 2026-04-20T17:20:26
 # returncode: 0
-# duration_sec: 21.232
+# duration_sec: 17.587
 
 Loading SMD data...
 W_train_all: (23678, 10, 38)
@@ -9,36 +9,36 @@ W_test     : (23678, 10, 38)
 y_test     : (23678,), positives=1049
 W_train split: (21311, 10, 38), W_val split: (2367, 10, 38)
 A shape: (38, 38), density=0.0845
-Epoch 001/020 | train_loss=0.318335 | val_loss=0.216793
-Epoch 002/020 | train_loss=0.191355 | val_loss=0.167207
-Epoch 003/020 | train_loss=0.163087 | val_loss=0.128927
-Epoch 004/020 | train_loss=0.145356 | val_loss=0.107692
-Epoch 005/020 | train_loss=0.135314 | val_loss=0.091693
-Epoch 006/020 | train_loss=0.128493 | val_loss=0.083350
-Epoch 007/020 | train_loss=0.124206 | val_loss=0.078386
-Epoch 008/020 | train_loss=0.121667 | val_loss=0.075119
-Epoch 009/020 | train_loss=0.120726 | val_loss=0.072751
-Epoch 010/020 | train_loss=0.118968 | val_loss=0.071957
-Epoch 011/020 | train_loss=0.120822 | val_loss=0.069921
-Epoch 012/020 | train_loss=0.117197 | val_loss=0.068672
-Epoch 013/020 | train_loss=0.117889 | val_loss=0.068398
-Epoch 014/020 | train_loss=0.116720 | val_loss=0.067863
-Epoch 015/020 | train_loss=0.116176 | val_loss=0.067117
-Epoch 016/020 | train_loss=0.116906 | val_loss=0.067294
-Epoch 017/020 | train_loss=0.115885 | val_loss=0.065870
-Epoch 018/020 | train_loss=0.116261 | val_loss=0.065829
-Epoch 019/020 | train_loss=0.115409 | val_loss=0.066096
-Epoch 020/020 | train_loss=0.114124 | val_loss=0.066684
+Epoch 001/020 | train_loss=0.334828 | val_loss=0.222195
+Epoch 002/020 | train_loss=0.184982 | val_loss=0.149548
+Epoch 003/020 | train_loss=0.155739 | val_loss=0.121880
+Epoch 004/020 | train_loss=0.142938 | val_loss=0.109809
+Epoch 005/020 | train_loss=0.137550 | val_loss=0.098356
+Epoch 006/020 | train_loss=0.130310 | val_loss=0.088145
+Epoch 007/020 | train_loss=0.125653 | val_loss=0.083946
+Epoch 008/020 | train_loss=0.124050 | val_loss=0.081702
+Epoch 009/020 | train_loss=0.122200 | val_loss=0.077991
+Epoch 010/020 | train_loss=0.121400 | val_loss=0.076949
+Epoch 011/020 | train_loss=0.119967 | val_loss=0.074150
+Epoch 012/020 | train_loss=0.120408 | val_loss=0.072954
+Epoch 013/020 | train_loss=0.118696 | val_loss=0.072530
+Epoch 014/020 | train_loss=0.118261 | val_loss=0.070197
+Epoch 015/020 | train_loss=0.119488 | val_loss=0.069478
+Epoch 016/020 | train_loss=0.118042 | val_loss=0.068231
+Epoch 017/020 | train_loss=0.116633 | val_loss=0.069458
+Epoch 018/020 | train_loss=0.116896 | val_loss=0.067519
+Epoch 019/020 | train_loss=0.115963 | val_loss=0.067698
+Epoch 020/020 | train_loss=0.115312 | val_loss=0.065616
 Applied moving average smoothing: k=5
 
 Score stats
-Train mean=0.064536 max=5.812165
-Test  mean=19.254661 max=331.018951
+Train mean=0.064828 max=3.571383
+Test  mean=17.152306 max=308.389386
 
 Evaluation with thresholds
 ----------------------------------------
 Percentile: 99.0
-Threshold : 0.221623
+Threshold : 0.241907
 Pred count: 20973
 True count: 1049
 Precision : 0.049731
@@ -46,15 +46,15 @@ Recall    : 0.994280
 F1        : 0.094723
 ----------------------------------------
 Percentile: 99.5
-Threshold : 0.296272
-Pred count: 20972
+Threshold : 0.314865
+Pred count: 20973
 True count: 1049
-Precision : 0.049733
+Precision : 0.049731
 Recall    : 0.994280
-F1        : 0.094728
+F1        : 0.094723
 ----------------------------------------
 Percentile: 99.9
-Threshold : 0.932779
+Threshold : 1.088357
 Pred count: 20964
 True count: 1049
 Precision : 0.049752
@@ -64,7 +64,7 @@ F1        : 0.094762
 Best threshold setting
 ----------------------------------------
 Best percentile: 99.9
-Best threshold : 0.932779
+Best threshold : 1.088357
 Best precision : 0.049752
 Best recall    : 0.994280
 Best F1        : 0.094762
